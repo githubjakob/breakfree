@@ -1,6 +1,7 @@
 {
   "name": "breakfree",
-  "version": "1",
+  "version": "1.0.0",
+    "description": "Phaser based jump'n'run with NodeJS backend",
   "devDependencies": {
     "nodemon": "1.11.0"
   },
