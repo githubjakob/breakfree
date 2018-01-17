@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <link rel="icon" type="image/png" href="client/assets/favicon.png" sizes="64x64">
+	    <title>Project</title>
+	    
+	    <!-- Socket.IO Framework - Client --> 		
+	    <script src="/socket.io/socket.io.js"></script>
+	    <script src = "client/javascript/connectionHandler.js"></script>
+
+		<script src="client/javascript/lib/jquery-3.2.1.min.js"></script>
+		<script src="client/javascript/lib/logger.js"></script>
+		<script src = "client/javascript/lib/phaser.js"></script>
+		<script src = "client/javascript/lib/illuminated.js"></script>
+		<script src = "client/javascript/lib/phaserIlluminated.js"></script>
+
+	    <script src = "client/javascript/objects/player.js"></script>
+	    <script src = "client/javascript/objects/key.js"></script>
+		<script src = "client/javascript/objects/ladder.js"></script>
+	    <script src = "client/javascript/objects/savedGame.js"></script>
+		<script src = "client/javascript/objects/enemy.js"></script>
+		<script src = "client/javascript/objects/AI.js"></script>
+		<script src = "client/javascript/objects/lever.js"></script>
+
+		<script src = "client/javascript/states/levelState.js"></script>
+		<script src = "client/javascript/states/menuState.js"></script>
+		<script src = "client/javascript/states/tutorialState.js"></script>
+		<script src = "client/javascript/states/nameInputState.js"></script>
+		<script src = "client/javascript/states/listSavegamesState.js"></script>
+		<script src = "client/javascript/states/loadingState.js"></script>
+		<script src = "client/javascript/states/levelOverState.js"></script>
+		<script src = "client/javascript/states/highscoreState.js"></script>
+
+		<script src = "client/javascript/stateManager.js"></script>
+		<script src = "client/javascript/game.js"></script>
+	    <script src = "client/javascript/camera.js"></script>
+
+
+
+		<style>
+	    	/* Setzt die Außen- & Innenabstände auf 0 */
+	    	* {
+	    		margin: 0;
+	    		padding: 0;
+	    	}
+	    	/* Setzt den Hintergrund auf eine dunkle farbe */
+	    	html, body {	    		
+	    		background: #111;
+	    	}
+
+	    	#phaserCanvas {
+
+	    		/*
+	    		* width & height abhaengig von der Canvas groesse.
+	    		*/
+	    		width: 800px;
+	    		height: 600px;
+
+	    		/* Abstand zum oberen Rand und zentriert die Canvas in der Mitte */
+	    		margin: 50px auto;
+
+	    		/* Heller Rahmen um die Canvas */
+	    		border: 1px solid #ddd;
+
+	    		position: relative;
+
+			}
+
+
+			@media (max-width: 1672px) {
+			    #chat {
+		    		position: relative;
+		    		margin: 10px auto;
+		    		padding: 10px 5px 5px 5px;
+		    		width: 400px;
+		    		height: 510px;
+		    		border: 1px solid #ddd;
+		    		background: #777;
+		    		color: #FFF;
+		    		font-family: helvetica;
+
+			    }			    
+			}
+
+
+			@media (min-width: 1673px) {
+		    	#chat {
+		    		position: absolute;
+		    		left: 20px;
+		    		top: 50px;
+		    		padding: 10px;
+		    		width: 400px;
+		    		height: auto;
+		    		border: 1px solid #ddd;
+		    		background: #777;
+		    		color: #FFF;
+		    		font-family: helvetica;
+		    	}
+ 			}
+		    	
+		    #chat label {
+				width: 400px;
+	    		height: 20px;
+	    	}
+
+		    #chat input {
+		   		width: 390px;
+		    	height: auto;
+		  		padding-left: 10px;
+	    		margin-top: 3px;
+	    		border: 1px solid #333;
+	    		background: #000;
+		    	font-family: helvetica;
+		   		font-size: 20px;
+		   		color: #DDD;
+		   	}
+
+		    #chat textarea {
+		   		min-width: 390px;
+		   		min-height: 300px;
+		   		max-width: 390px;
+		   		max-height: 300px;
+	    		margin-top: 3px;
+	    		border: 1px solid #333;
+	    		background: #000;
+		    	font-family: helvetica;
+		   		font-size: 20px;
+		   		color: #DDD;
+		   		padding: 5px;
+		   	}
+
+		   	#chat button {
+		   		width: 400px;
+		   		padding: 5px;
+		   		height: 30px;
+	    		margin: 5px auto;
+	    	}
+	    	
+	    </style>
+	</head>
+	<body>
+		<div id="phaserCanvas"></div>
+
+		<div id="chat">
+			<div>
+				<h1 id="CCounter">Clients online: </h1>
+			</div>
+			<form>
+				<label>NAME:</label> 
+				<input id="chat_name" type="text" value="Default User" onkeyup="chat.updateUsername()">
+
+				<label>Textchat: </label> 
+				<textarea id="chat_history" rows="10" cols="50" readonly value="" ></textarea>
+
+				<label>Your Input:</label> 
+				<input id="text_input" type="text" onkeypress="chat.sendText( event )">
+				<button type="button" onclick="chat.sendText( event )">SEND</button> 
+			</form>
+		</div>
+	</body>
+
+	<script src = "client/javascript/chat.js"></script>
+</html>

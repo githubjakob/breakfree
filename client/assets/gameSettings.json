@@ -1,0 +1,100 @@
+{
+  "enemyTypes": {
+    "guard": {
+      "gravity": 700,
+      "sprite": "enemy2",
+      "velocityX": 50,
+      "attackVelocityX": 75,
+      "behaviour": "patrol",
+      "range": 50,
+      "vision": 200
+    },
+    "shooter": {
+      "gravity": 700,
+      "sprite": "enemy3",
+      "velocityX": 50,
+      "attackVelocityX": 90,
+      "behaviour": "stay",
+      "range": 50,
+      "vision": 200,
+      "projectile": "bullets"
+    },
+    "dog": {
+      "gravity": 700,
+      "sprite": "enemy1",
+      "velocityX": 50,
+      "attackVelocityX": 100,
+      "frame": 0,
+      "behaviour": "stay",
+      "range": 100,
+      "vision": 200
+    },
+    "chopper": {
+      "gravity": 0,
+      "sprite": "boss",
+      "velocityX": 100,
+      "attackVelocityX": 150,
+      "frame": 3,
+      "behaviour": "nothing",
+      "range": 200,
+      "vision": 1500,
+      "projectile": "nets"
+    },
+    "chopperGuard": {
+      "gravity": 700,
+      "sprite": "enemy2",
+      "velocityX": 50,
+      "attackVelocityX": 75,
+      "behaviour": "patrol",
+      "range": 50,
+      "vision": 300000
+    },
+    "flashlight": {
+      "gravity": 300,
+      "sprite": "enemy3",
+      "velocityX": 20,
+      "attackVelocityX": 50,
+      "frame": 2,
+      "behaviour": "patrol",
+      "range": 50,
+      "vision": 200
+    }
+  },
+
+  "projectileTypes": {
+    "bullets": {
+      "velocity": 400,
+      "gravity": 0
+    },
+    "nets": {
+      "velocity": 400,
+      "gravity": 0
+    },
+    "rocketPacks": {
+      "velocity": -10,
+      "gravity": 700
+    },
+    "rockets": {
+      "velocity": -400,
+      "gravity": -700
+    }
+  },
+
+  "playerDefaultNames": {
+    "player0": "Tim",
+    "player1": "Tom"
+  },
+
+  "leverNumbers": {
+    "lever0": "1",
+    "lever1": "0",
+    "lever2": "2",
+    "lever3": "4",
+    "lever4": "3",
+    "lever5": "5"
+
+
+  }
+
+
+}
